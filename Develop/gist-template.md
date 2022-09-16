@@ -1,6 +1,6 @@
-# Title (replace with your title)
+# Regular Expression Functions
 
-Introductory paragraph (replace this with your text)
+A regular expression function is a function that 
 
 ## Summary
 
