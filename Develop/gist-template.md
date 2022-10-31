@@ -114,8 +114,8 @@ This tutorial will hopefully help you to understand and start utilizing regex fu
 
         - '([^<]+)*' is analyzed as a group that matches any character that is not '[^<]' (in this set) and matches 0 or more of the preceding token ('*').
 
-        - '(?:>(.*)<\/\1>|\s+\/>)' this portion is a bit more complex so we will break it down a little further.
-            - This portion is a non-capturing group which groups multiple tokens together without actually creating a capture group.
+        - '(?:>(.*)<\/\1>|\s+\/>)' this portion is a bit more complex so we will break it down a little further:
+            - This portion is a non-capturing group (?:) which groups multiple tokens together without actually creating a capture group.
             - '>(.*)' is analyzed as a group that matches '>' and then any other character except a line break also matching 0 or more of the preceding token ('*').
             - '<\/\1>' is analyzed as searching for '<' followed by '/' and then followed by the capture group 1 '([a-z]+)'.
             - '|\s+\/>)' is analayzed as an 'OR' operator ('|'). Followed by a token that matches any whitespace along with a '/' and '>' character.
