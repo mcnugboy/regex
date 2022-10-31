@@ -100,6 +100,18 @@ This tutorial will hopefully help you to understand and start utilizing regex fu
     A Look-ahead assert (=) is used to tell the regex function what immediately follows the current position in the string. 
     A Look-behind assert (<=) is used to tell the regex function what is immediately precedes the current position in the string.
 
+### Regex Breakdown
+
+    /^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$/
+
+    Together we will breakdown this (what looks complex) regular expression.
+
+        - To begin alaysis we will notice this is a regex expression by the initial  '/' at the beginning of the function. 
+        - '^<' tells us that the regex will try to match a '<' character at the beginning of each string on a line.
+        - '([a-z]+)' is analyzed as a group that matches any character a-z and match 1 or more of the preceeding token.
+        - '([^<]+)*' is analyzed as a group that matches any character that is not '[^<]' (in this set) and matches 0 or more of the preceeding token ('*').
+
+
 ## Author
 
     Hello my name is Grant, I am a Full-Stack Developer who strives to continue learning forever.
