@@ -106,11 +106,23 @@ This tutorial will hopefully help you to understand and start utilizing regex fu
 
     Together we will breakdown this (what looks complex) regular expression.
 
-        - To begin alaysis we will notice this is a regex expression by the initial  '/' at the beginning of the function. 
-        - '^<' tells us that the regex will try to match a '<' character at the beginning of each string on a line.
-        - '([a-z]+)' is analyzed as a group that matches any character a-z and match 1 or more of the preceeding token.
-        - '([^<]+)*' is analyzed as a group that matches any character that is not '[^<]' (in this set) and matches 0 or more of the preceeding token ('*').
+        - To begin alaysis we will notice this is a regex expression by the initial  '/' at the beginning of the function.
 
+        - '^<' tells us that the regex will try to match a '<' character at the beginning of each string on a line.
+
+        - '([a-z]+)' is analyzed as a group that matches any character a-z and match 1 or more of the preceding token.
+
+        - '([^<]+)*' is analyzed as a group that matches any character that is not '[^<]' (in this set) and matches 0 or more of the preceding token ('*').
+
+        - '(?:>(.*)<\/\1>|\s+\/>)' this portion is a bit more complex so we will break it down a little further.
+            - This portion is a non-capturing group which groups multiple tokens together without actually creating a capture group.
+            - '>(.*)' is analyzed as a group that matches '>' and then any other character except a line break also matching 0 or more of the preceding token ('*').
+            - '<\/\1>' is analyzed as searching for '<' followed by '/' and then followed by the capture group 1 '([a-z]+)'.
+            - '|\s+\/>)' is analayzed as an 'OR' operator ('|'). Followed by a token that matches any whitespace along with a '/' and '>' character.
+            
+        - '$' indictates the end of the regular expression function.
+
+    This regex function is used to match an HTML tag!
 
 ## Author
 
